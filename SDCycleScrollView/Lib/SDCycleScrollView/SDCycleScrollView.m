@@ -141,6 +141,10 @@ NSString * const ID = @"SDCycleScrollViewCell";
     mainView.pagingEnabled = YES;
     mainView.showsHorizontalScrollIndicator = NO;
     mainView.showsVerticalScrollIndicator = NO;
+    
+    if (@available(iOS 9.0, *)) {
+        mainView.semanticContentAttribute = UISemanticContentAttributeForceLeftToRight;
+    }
     [mainView registerClass:[SDCollectionViewCell class] forCellWithReuseIdentifier:ID];
     
     mainView.dataSource = self;
